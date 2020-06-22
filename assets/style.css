@@ -9,6 +9,8 @@
      background-size: cover;
      width: 100%;
      height: 100%;
+     overflow-x: hidden;
+     overflow-y: hidden;
 }
 
 /* ---- Header & Footer ---- */
@@ -38,11 +40,9 @@
     font-size: 15px;
 }
 
-.destination-search {
-    
-}
+/* ---- Map ---- */
 
-/* ---- Form ---- */
+div#map {min-height: 360px;}
 
 /*-- Small (Mobile and Tablet) Screen View --*/ 
 
