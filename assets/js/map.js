@@ -1,9 +1,10 @@
 var map
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: { lat: 51.522573, lng: 0.467391},
+        zoom: 10,
+        center: { lat: 57.304650, lng: -6.223610},
     });
 }
 
 var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ 
