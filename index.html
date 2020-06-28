@@ -33,19 +33,13 @@
         <!-- Destination Search -->
 
         <section class="container my-auto col-lg-6 pl-lg-0">
-            <form class="mt-lg-5 mt-lg-3">
-                <p class="small-text m-lg-1 ml-3 ml-lg-0">Accomodation</p>
-                <select name="accomodation" id="accomodation" class="w-25" placeholder="Select">
-                    <option value="all"></option>
-                </select>
-                <p class="small-text m-lg-1 ml-3 ml-lg-0">Restaurants & Bars</p>
-                <select name="country" id="country" class="w-25" placeholder="Select">
-                    <option value="all"></option>
-                </select>
-                <p class="small-text m-lg-1 ml-3 ml-lg-0">Attractions</p>
-                <select name="country" id="country" class="w-25" placeholder="Select">
-                    <option value="all"></option>
-                </select>
+            <form class="mt-lg-5 mt-lg-3 ml-3 ml-lg-0 mb-3 mb-lg-0">
+                <input type="radio" name="pin" id="accomodation" value="Accomodation" onclick="accomodationSearch">
+                <label for="male" class="small-text pl-lg-3 pl-2">Accomodation</label><br>
+                <input type="radio" name="pin" id="restaurants" value="restaurants" onclick="restaurantSearch">
+                <label for="male" class="small-text pl-lg-3 pl-2">Restaurants and Bars</label><br>
+                <input type="radio" name="pin" id="attractions" value="Attractions" onclick="attractionSearch">
+                <label for="male" class="small-text pl-lg-3 pl-2">Attractions</label><br>
             </form>
 
             <!-- Map -->    
@@ -62,6 +56,7 @@
     <div class="row mt-5 mt-lg-0">
         <div class="col-lg-6 grey-bg mt-lg-5 pr-lg-0">
             <h3 class="small-text pt-4 pb-4 d-flex justify-content-center search-text">Search Results</h3>
+            <ul class="small-text" id="places"></ul>
         </div>
         <div class="col-lg-6 pl-lg-0">
             <img src="assets/images/man-on-cliff.jpg" class="h-100 w-100 pt-lg-5" alt="Man in black t-shirt and jeans against the green backdrop of the Isle of Skye">
@@ -78,13 +73,13 @@
              <!-- Email Submit Form -->
             
             <div class="row d-flex justify-content-center pb-lg-4">
-                <form onsubmit="return sendMail(this);" class="w-lg-50 w-75">
+                <form onsubmit="return sendMail(this);" class="w-lg-50 w-75 id="email-form">
                     <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Name" required/>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required/>
-                    <textarea rows="5" type="text" name="projectsummary" id="projectsummary" class="form-control" placeholder="Let us know here about any information that will help us with your booking, such as dates of your trip and number of people..." required></textarea>
+                    <textarea rows="5" type="text" name="description" id="description" class="form-control" placeholder="Let us know here about any information that will help us with your booking, such as dates of your trip and number of people..." required></textarea>
                     <div class="form-row text-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-outline-dark small-text mb-4 mb-lg-0 mt-4 mt-lg-0">Send</button>
+                            <button type="submit" class="btn btn-outline-dark small-text mb-4 mb-lg-0 mt-4 mt-lg-0" onsubmit="return clear(this)">Send</button>
                         </div>
                     </div>
                 </form>
@@ -95,7 +90,7 @@
 
     <!-- Footer -->
 
-    <footer class="grey-bg m-0 pr-lg-5 pr-3">
+    <footer class="grey-bg m-0 pr-lg-5 pr-3 w-100">
         <div class="d-flex justify-content-end">
         <h4 id="copyright"> 
         <span class="material-icons mt-2">copyright</span>
@@ -104,12 +99,15 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+    <<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script src="assets/js/email.js"></script>
 
     <script src="assets/js/map.js"></script>
     
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmRAUQECn_Ms_sPRqqDQ7T31yA-4h_B58&callback=initMap" type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmRAUQECn_Ms_sPRqqDQ7T31yA-4h_B58&libraries=places&callback=initMap" type="text/javascript"></script>
 
 </body>
 </html>
