@@ -20,15 +20,14 @@ function sendMail(contactForm) {
         
 // Adapted from GitHub: Code-Institute-Solutions Code-Institute-Solutions/InteractiveFrontEndDevelopment-Resume //
 
+// Notifies user of sent email 
+
 function emailAlert(success) {
+    document.getElementById("email-form").reset();
     if (success) {
-        Swal.fire("Message sent!")
+        //add pop up window
     }
     else {
-        Swal.fire("oops! Something went wrong")
+        //add pop up window
     }
-}
-
-function clear() {
-    $getElementById("email-form").reset
 }

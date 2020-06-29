@@ -34,12 +34,12 @@
 
         <section class="container my-auto col-lg-6 pl-lg-0">
             <form class="mt-lg-5 mt-lg-3 ml-3 ml-lg-0 mb-3 mb-lg-0">
-                <input type="radio" name="pin" id="accomodation" value="Accomodation" onclick="accomodationSearch">
-                <label for="male" class="small-text pl-lg-3 pl-2">Accomodation</label><br>
-                <input type="radio" name="pin" id="restaurants" value="restaurants" onclick="restaurantSearch">
-                <label for="male" class="small-text pl-lg-3 pl-2">Restaurants and Bars</label><br>
-                <input type="radio" name="pin" id="attractions" value="Attractions" onclick="attractionSearch">
-                <label for="male" class="small-text pl-lg-3 pl-2">Attractions</label><br>
+                <input type="radio" name="pin" id="accomodation" value="Accomodation" onclick="accomodationSearch()">
+                <label for="accomodation" class="small-text pl-lg-3 pl-2">Accomodation</label><br>
+                <input type="radio" name="pin" id="restaurants" value="restaurants" onclick="restaurantSearch()">
+                <label for="restaurants" class="small-text pl-lg-3 pl-2">Restaurants and Bars</label><br>
+                <input type="radio" name="pin" id="attractions" value="Attractions" onclick="attractionSearch()">
+                <label for="attractions" class="small-text pl-lg-3 pl-2">Attractions</label><br>
             </form>
 
             <!-- Map -->    
@@ -56,7 +56,7 @@
     <div class="row mt-5 mt-lg-0">
         <div class="col-lg-6 grey-bg mt-lg-5 pr-lg-0">
             <h3 class="small-text pt-4 pb-4 d-flex justify-content-center search-text">Search Results</h3>
-            <ul class="small-text" id="places"></ul>
+            <ul class="small-text" id="results"></ul>
         </div>
         <div class="col-lg-6 pl-lg-0">
             <img src="assets/images/man-on-cliff.jpg" class="h-100 w-100 pt-lg-5" alt="Man in black t-shirt and jeans against the green backdrop of the Isle of Skye">

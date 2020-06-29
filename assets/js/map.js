@@ -2,6 +2,8 @@ var map;
 var service;
 var infowindow;
 
+// Initialises map over the Iske of Skye 
+
 function initMap() {
   var skye = new google.maps.LatLng(57.304650, -6.223610);
 
@@ -10,23 +12,62 @@ function initMap() {
         zoom: 10
     });
 
-    // Locate restaurants nearby
-
-  var request = {
-        location: skye,
-        radius: '20000',
-        type: ['lodging']
-    };
-
     // opens map info window
 
     infowindow = new google.maps.InfoWindow();
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
 }
 
-// Return restaurants nearby
+// Performs place searches  
+
+    // Locate Accomodation nearby
+
+    function accomodationSearch(){
+        var skye = new google.maps.LatLng(57.304650, -6.223610);
+        var accomodation = {
+            location: skye,
+            radius: '20000',
+            type: ['lodging']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(accomodation, callback);
+
+        clearMarkers();
+    }
+
+    // Locate restaurants nearby
+
+    function restaurantSearch(){
+        var skye = new google.maps.LatLng(57.304650, -6.223610);
+        var restaurant = {
+            location: skye,
+            radius: '20000',
+            type: ['restaurant']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(restaurant, callback);
+
+        clearMarkers();
+    }
+
+    // Locate attractions nearby
+
+    function attractionSearch(){
+        var skye = new google.maps.LatLng(57.304650, -6.223610);
+        var attractions = {
+            location: skye,
+            radius: '20000',
+            type: ['tourist_attraction']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(attractions, callback);
+
+        clearMarkers();
+    } 
+
+// Returns results
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -36,7 +77,7 @@ function callback(results, status) {
   }
 }
 
-// Create Markers on the map for the neaby restaurants
+// Creates markers on the map for nearby places
 
 function createMarkers(place) {
   place.geometry.location;
@@ -53,8 +94,21 @@ function createMarkers(place) {
   });
 }
 
-// Accomodation Search
+// Displays results and detail in the search results section 
 
-// Restaurant Search
+function searchResults() {
 
-// Attractions Search
+}
+
+// Clears markers from map
+
+function clearMarkers() {
+    var marker = new google.maps.Marker
+    marker.setMap(null);
+}
+
+// Clears results from search results section
+
+function clearResults() {
+
+}
