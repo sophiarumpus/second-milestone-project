@@ -6,28 +6,28 @@ function sendMail(contactForm) {
 		"service_request": contactForm.description.value
 		})
 		.then(
-			function(response, emailAlert) {
+			function(response) {
                 console.log("SUCCESS", response);
                 emailAlert(true);
 			},
-			function(error, emailAlert) {
+			function(error) {
                 console.log("FAILED", error);
                 emailAlert(false);
             }
         );
         return false; // To block from loading a new page
 }
-        
+
 // Adapted from GitHub: Code-Institute-Solutions Code-Institute-Solutions/InteractiveFrontEndDevelopment-Resume //
 
-// Notifies user of sent email 
+// Notifies user of email submission
 
 function emailAlert(success) {
     document.getElementById("email-form").reset();
     if (success) {
-        //add pop up window
+        Swal.fire("Thank you! We will get back to you shortly.")
     }
     else {
-        //add pop up window
+        Swal.fire("Uh oh, something went wrong! Please check and try again.")
     }
 }

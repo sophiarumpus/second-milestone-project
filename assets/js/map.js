@@ -97,7 +97,7 @@ function createMarkers(place) {
 // Displays results and detail in the search results section 
 
 function searchResults() {
-
+    
 }
 
 // Clears markers from map

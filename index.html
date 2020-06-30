@@ -67,24 +67,27 @@
 
     <section class="row">
         <div class="h-100 w-100 white-bg pt-4" 
+
             <h3 id="help">Need help?</h3>
             <p class="small-text help-text mt-lg-3 pr-5 pl-5 pt-2 pb-2 pb-lg-0 pt-lg-0">Why not let us surprise you? Contact us to organise your itinerary for you</p>
 
              <!-- Email Submit Form -->
             
             <div class="row d-flex justify-content-center pb-lg-4">
-                <form onsubmit="return sendMail(this);" class="w-lg-50 w-75 id="email-form">
+                <form onsubmit="return sendMail(this);" class="w-lg-50 w-75" id="email-form">
                     <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Name" required/>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email" required/>
                     <textarea rows="5" type="text" name="description" id="description" class="form-control" placeholder="Let us know here about any information that will help us with your booking, such as dates of your trip and number of people..." required></textarea>
                     <div class="form-row text-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-outline-dark small-text mb-4 mb-lg-0 mt-4 mt-lg-0" onsubmit="return clear(this)">Send</button>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Send</span>
+                            </button>
                         </div>
                     </div>
                 </form>
             </div>
-        
+
         </div>
     </section>
 
@@ -92,16 +95,18 @@
 
     <footer class="grey-bg m-0 pr-lg-5 pr-3 w-100">
         <div class="d-flex justify-content-end">
-        <h4 id="copyright"> 
-        <span class="material-icons mt-2">copyright</span>
-        Sophia Rumpus
-        </h4>
+            <h4 id="copyright"> 
+                <span class="material-icons mt-2">copyright</span>
+            Sophia Rumpus
+            </h4>
+        </div>
     </footer>
 
     <!-- Scripts -->
+
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
-    <<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script src="assets/js/email.js"></script>
 
