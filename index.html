@@ -51,23 +51,10 @@
 
     </div>
 
-    <!-- Search Results -->
-
     <div class="row mt-5 mt-lg-0">
         <div class="col-lg-6 grey-bg mt-lg-5 pr-lg-0">
-            <h3 class="small-text pt-4 pb-4 d-flex justify-content-center search-text">Search Results</h3>
-            <ul class="small-text" id="results"></ul>
-        </div>
-        <div class="col-lg-6 pl-lg-0">
-            <img src="assets/images/man-on-cliff.jpg" class="h-100 w-100 pt-lg-5" alt="Man in black t-shirt and jeans against the green backdrop of the Isle of Skye">
-        </div>
-    </div>
 
-    <!-- Contact -->
-
-    <section class="row">
-        <div class="h-100 w-100 white-bg pt-4" 
-
+            <div class="h-100 w-100 white-bg pt-4" 
             <h3 id="help">Need help?</h3>
             <p class="small-text help-text mt-lg-3 pr-5 pl-5 pt-2 pb-2 pb-lg-0 pt-lg-0">Why not let us surprise you? Contact us to organise your itinerary for you</p>
 
@@ -89,7 +76,49 @@
             </div>
 
         </div>
-    </section>
+
+        <!-- Omitting the extraction of Google Place markers detail to this section for the time being 
+
+        -- Search Results --
+
+            <h3 class="small-text pt-4 pb-4 d-flex justify-content-center search-text">Search Results</h3>
+            <ul class="small-text" id="searchResults"></ul> -->
+
+        </div>
+        <div class="col-lg-6 pl-lg-0">
+            <img src="assets/images/man-on-cliff.jpg" class="h-100 w-100 pt-lg-5" alt="Man in black t-shirt and jeans against the green backdrop of the Isle of Skye">
+        </div>
+    </div>
+
+    <!-- If search results section can be completed, the contact form will move down here 
+
+    -- Contact -- 
+
+    <section class="row">
+        <div class="h-100 w-100 white-bg pt-4" 
+
+            <h3 id="help">Need help?</h3>
+            <p class="small-text help-text mt-lg-3 pr-5 pl-5 pt-2 pb-2 pb-lg-0 pt-lg-0">Why not let us surprise you? Contact us to organise your itinerary for you</p>
+
+            -- Email Submit Form -- 
+            
+            <div class="row d-flex justify-content-center pb-lg-4">
+                <form onsubmit="return sendMail(this);" class="w-lg-50 w-75" id="email-form">
+                    <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Name" required/>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required/>
+                    <textarea rows="5" type="text" name="description" id="description" class="form-control" placeholder="Let us know here about any information that will help us with your booking, such as dates of your trip and number of people..." required></textarea>
+                    <div class="form-row text-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Send</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section> -->
 
     <!-- Footer -->
 

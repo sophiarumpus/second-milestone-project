@@ -1,6 +1,7 @@
 var map;
 var service;
 var infowindow;
+var markers = [];
 
 // Initialises map over the Iske of Skye 
 
@@ -22,6 +23,9 @@ function initMap() {
     // Locate Accomodation nearby
 
     function accomodationSearch(){
+
+        clearMarkers();
+
         var skye = new google.maps.LatLng(57.304650, -6.223610);
         var accomodation = {
             location: skye,
@@ -31,13 +35,14 @@ function initMap() {
 
         service = new google.maps.places.PlacesService(map);
         service.nearbySearch(accomodation, callback);
-
-        clearMarkers();
     }
 
     // Locate restaurants nearby
 
     function restaurantSearch(){
+
+        clearMarkers();
+
         var skye = new google.maps.LatLng(57.304650, -6.223610);
         var restaurant = {
             location: skye,
@@ -47,13 +52,14 @@ function initMap() {
 
         service = new google.maps.places.PlacesService(map);
         service.nearbySearch(restaurant, callback);
-
-        clearMarkers();
     }
 
     // Locate attractions nearby
 
     function attractionSearch(){
+
+        clearMarkers();
+
         var skye = new google.maps.LatLng(57.304650, -6.223610);
         var attractions = {
             location: skye,
@@ -63,8 +69,6 @@ function initMap() {
 
         service = new google.maps.places.PlacesService(map);
         service.nearbySearch(attractions, callback);
-
-        clearMarkers();
     } 
 
 // Returns results
@@ -86,6 +90,8 @@ function createMarkers(place) {
       position: place.geometry.location
   });
 
+  markers.push(marker);
+
   // listens for click on marker to display detail
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -94,21 +100,40 @@ function createMarkers(place) {
   });
 }
 
-// Displays results and detail in the search results section 
+// Google Documentation for Clearing Markers
 
-function searchResults() {
-    
-}
+// Sets the map on all markers in the array.
+
+      function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+      // Removes the markers from the map, but keeps them in the array.
+      function clearMarkers() {
+        setMapOnAll(null);
+      }
+
+      // Deletes all markers in the array by removing references to them.
+      function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+      }
+
+/* Omitting for the time being
+
+    // Displays results and detail in the search results section 
+
+    function searchResults() {
+        document.getElementById('searchResults')
+    }
+
+    /* Clears results from search results section 
+
+    function clearResults() {
+
+    }
+*/
 
 // Clears markers from map
-
-function clearMarkers() {
-    var marker = new google.maps.Marker
-    marker.setMap(null);
-}
-
-// Clears results from search results section
-
-function clearResults() {
-
-}
